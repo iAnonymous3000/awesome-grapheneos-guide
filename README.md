@@ -12,12 +12,43 @@ GrapheneOS is the only custom Android-based operating system you should buy a ne
 - Advanced Protection Program features, except for Play Protect and restricted app installation
 - Storage Scopes feature, allowing you to force apps that request broad storage access permission to function with scoped storage
 
-Google Pixel phones are the only devices that meet GrapheneOS's [hardware security requirements](https://grapheneos.org/faq#device-support).
+Google Pixel phones are the **only** devices that meet GrapheneOS's [hardware security requirements](https://grapheneos.org/faq#device-support).
 
 Even prominent privacy experts like Edward Snowden, the well-known NSA whistleblower and privacy advocate, use GrapheneOS as their mobile operating system of choice. 
 
 ![image](https://github.com/iAnonymous3000/awesome-grapheneos-guide/assets/32236127/78571e0b-9e81-451d-83ef-02269aa729fd)
 
+
+## GrapheneOS vs. Other Android ROMs
+
+While GrapheneOS is our recommended choice for a privacy-focused and secure Android experience, it's worth comparing it to other popular Android ROMs to understand its unique advantages. The following table provides a detailed comparison of GrapheneOS with other ROMs such as DivestOS, CalyxOS, IodéOS, /e/, LineageOS, and stock Android:
+
+| Feature/Aspect | GrapheneOS | DivestOS | CalyxOS | IodéOS | /e/ | LineageOS | Stock Android |
+|---------------------------------|-------------------|-------------------|-------------------|-------------------|--------------------|--------------------|-------------------|
+| Based on | AOSP | LineageOS | AOSP | LineageOS | LineageOS | AOSP | AOSP |
+| Free and open source (FOSS)? | Yes | Yes | Yes | Yes | Yes | Yes | No |
+| Deblobbed? | Yes, significantly| Yes, extensively | Yes, significantly| Yes, minimal | Yes, minimal | Yes, minimal | No |
+| Network controls for apps | Direct/indirect | Direct/indirect | Direct only | Direct only | Direct only | Direct only | No |
+| E2E-encrypted phone backups | Yes (Seedvault) | Yes (Seedvault) | Yes (Seedvault) | Yes (Seedvault) | Yes (Seedvault) | Yes (Seedvault) | Yes (Google login)|
+| Android Auto compatible | Yes | No | No | No | No | No | Yes |
+| Google Pay compatible | No | No | No | No | No | No | Yes |
+| Implementation | GmsCompat | microG | microG | microG | microG | None/manual MicroG| Google Play Services|
+| Sandboxed/unprivileged? | Yes | Yes | No | No | No | No | No |
+| Storage scopes | Yes | No | No | No | No | No | No |
+| Per-app sensor controls | Yes | Yes | No | No | No | No | No |
+| Verified boot | Yes | Yes (excl. system app updates)| Yes (excl. system app updates) | Yes (excl. system app updates) | w/ test keys; excl. system app updates | No | Yes (excl. system app updates) |
+| Hardened memory allocator? | Yes | Yes | No | No | No | No | No |
+| Hardened kernel? | Yes, highest | Yes, high | No | No | No | No | No |
+| Security update speed | <2 days | 1-3 weeks | ~1 week | ~1 month | ~2 months | 1-2 weeks | Depends on vendor |
+| Number of Android versions supported | Usually 1 | 7 (incl. backports) | Usually 1 | Usually 1 | 2-3 | Usually 3 | Usually 3 |
+
+*Note: The table above is a simplified version. Please refer to the full comparison table for more details.*
+
+As evident from the comparison, GrapheneOS stands out in terms of its strong focus on privacy, security, and freedom. It is based on AOSP, is fully open-source, and has been extensively deblobbed. GrapheneOS also offers unique features such as per-app network controls, storage and contact scopes, and advanced security hardening.
+
+While other ROMs like DivestOS and CalyxOS also prioritize privacy and security, they may not offer the same level of granular control and advanced security features as GrapheneOS. LineageOS and /e/ are more focused on providing an alternative to stock Android with additional customization options, but they may not be as hardened as GrapheneOS.
+
+Ultimately, the choice of ROM depends on your specific needs and priorities. However, if your primary concern is privacy and security, GrapheneOS is the clear winner among the compared ROMs.
 
 ## Purchasing a Mobile Phone
 
@@ -47,27 +78,50 @@ The Calyx Institute offers unlimited mobile internet for members at various leve
 - **Backup Data:** Backup existing data before installation.
 - **Installation Methods:** Use the [Web Installer](https://grapheneos.org/install/web) or [CLI Installer](https://grapheneos.org/install/cli) for installation.
 
-## Setting Up GrapheneOS
+## Initial Setup
 
-This step-by-step setup includes:
+After installing GrapheneOS, follow these steps to set up your device:
 
-- Fitting a case and screen protector
-- Configuring the Vanadium browser
-- Connecting to Wi-Fi
-- Installing F-Droid
-- Making key decisions on VPN usage
-- Installing and configuring a VPN app
-- Deciding on and implementing an ad-blocking strategy
-- Installing and setting up essential apps like Bromite, Signal, Tor Browser, OsmAnd~, and Aurora Store
-- Setting up email, weather, and other utilities
-- Customizing app and device-wide settings for improved experience
-- Setting a wallpaper
-- Configuring the Quick Settings menu and home screen
-- Setting up Seedvault backups
-- Backing up shared storage
-- Deactivating USB debugging
+1. Press the power button to boot into GrapheneOS.
 
-Follow the detailed steps to configure each aspect of GrapheneOS for optimal privacy, security, and usability.
+2. Select your preferred language and region.
+
+3. Set up a strong PIN code for your device. Consider using a long, alphanumeric passphrase for enhanced security.
+
+4. Connect to a Wi-Fi network. If possible, use a trusted and secure network, such as your home Wi-Fi, for the initial setup.
+
+5. Update GrapheneOS to the latest version:
+   - Go to Settings > System > System update.
+   - If an update is available, download and install it.
+
+6. Review and adjust privacy settings:
+   - Go to Settings > Privacy.
+   - Review each option and adjust settings according to your preferences.
+
+7. Set up a secure lock screen:
+   - Go to Settings > Security > Screen lock.
+   - Choose a strong PIN, pattern, or password.
+   - Consider enabling "Lockdown" mode for additional security.
+
+8. Disable OEM unlocking:
+   - Go to Settings > About phone > Tap "Build number" until developer mode is enabled.
+   - Go to Settings > System > Developer options.
+   - Disable the "OEM unlocking" toggle.
+   - Restart your device to enable the device protection feature.
+
+9. Enable automatic updates:
+   - Go to Settings > System > System update > Auto update system.
+   - Select a preferred option for automatic updates (e.g., "Over Wi-Fi only").
+
+10. Set up a secure backup method:
+    - Go to Settings > System > Backup.
+    - Choose a secure backup option, such as Seedvault or an encrypted cloud storage service.
+
+11. Install essential apps from trusted sources, such as F-Droid or Aurora Store.
+
+12. Configure any additional security or privacy features according to your needs, such as app permissions, network controls, or sensor controls.
+
+Following these steps will give you a more secure and privacy-focused initial setup for your GrapheneOS device. Remember to regularly review and update your settings and apps to maintain the highest level of security and privacy.
 
 ## Unique Features of GrapheneOS
 
@@ -87,6 +141,35 @@ Follow the detailed steps to configure each aspect of GrapheneOS for optimal pri
 
 - **Google Play Store Apps:** Some apps may not work due to the absence of Google Play Services. Consider using alternative apps from F-Droid or the Aurora Store.
 - **MicroG:** A free and open-source alternative to Google Play Services that can improve app compatibility.
+
+## Profiles
+
+GrapheneOS supports both User Profiles and Work Profiles. Understanding the differences between these two types of profiles is crucial before deciding which one is right for you.
+
+### User Profiles
+
+User Profiles are designed to be used by different individuals sharing a single Android device. Each user has their own application data and preferences, as well as a user interface that allows them to switch between users manually. Key points about User Profiles:
+
+- Each user is intended for use by a separate person
+- Users have their own app data and preferences
+- Users can run in the background while another user is active
+- The system manages shutting down users to conserve resources when necessary
+- Secondary users can be added directly through the user interface or using the Device Administration program
+
+### Work Profiles
+
+Work Profiles, also known as managed profiles, are a collection of app data that shares some system-wide settings (e.g., Wi-Fi and Bluetooth). A Work Profile is a subset of a user's existence and is linked to it. Key points about Work Profiles:
+
+- Work Profiles are managed by an IT administrator
+- The functionality offered by a Work Profile is distinct from that of the user's primary profile
+- This method allows businesses to manage the environment in which company-specific apps and data run on a user's device while still allowing users to utilize their personal apps and accounts
+- Developers should follow standard app development guidelines to ensure their apps work reliably on devices with Work Profiles
+
+It's important to note that profiles are always linked to a parent user, which is determined by the user who created the profile. Profiles are only valid for the duration of the individual who created them.
+
+For more information on how to develop apps that work seamlessly with Work Profiles, refer to the [Android for Business documentation](https://developer.android.com/work).
+
+To learn more about the differences between User Profiles and Work Profiles in GrapheneOS, watch this [video guide](https://youtu.be/20C0FD7mGDY?si=TsprE4i3kJlc3iZP).
 
 ### Troubleshooting App Compatibility
 
@@ -182,6 +265,30 @@ Please note that some apps may simply be incompatible with GrapheneOS due to the
 - GrapheneOS requires devices to have strong security features and proper alternate OS support, which most Android OEMs, including Samsung, do not provide.
 - Pixels are nearly the only devices providing both strong security and proper alternate OS support.
 - GrapheneOS will support more devices in the future when there are other devices meeting their basic security requirements, but they are not willing to give up extremely important security features.
+
+## Future Plans and Roadmap
+
+GrapheneOS has ambitious long-term plans to move beyond being a hardened fork of the Android Open Source Project. The key goals include:
+
+- Moving away from relying on the Linux kernel as the core of the OS and foundation of the security model
+- Transitioning towards a microkernel-based model with a Linux compatibility layer
+- Adopting virtualization-based isolation to reinforce existing security boundaries
+
+The roadmap can be broken down into several phases:
+
+1. **Near-term enhancements**: Check the issue trackers for planned improvements and features. The majority of open issues are concrete and actionable.
+
+2. **Hypervisor integration**: Deploy and integrate a hypervisor like Xen to leverage it for reinforcing existing security boundaries. Linux would run inside virtual machines at this stage.
+
+3. **Sandbox reinforcement**: Replace Linux inside the sandboxes with a compatibility layer like gVisor, which would need to be ported to arm64 and given a new backend alongside the existing KVM backend.
+
+4. **Phasing out Linux**: Over the long term (many years), Linux can be phased out completely, along with the usage of virtualization.
+
+5. **Hardware and firmware security**: While currently limited to research and submitting suggestions and bug reports upstream, GrapheneOS aims to move into the hardware space in the long term.
+
+GrapheneOS anticipates that many other projects will be interested in this kind of migration, so it won't be solely a GrapheneOS project. Having a hypervisor with verified boot intact will also provide a way to achieve some of the goals based on extensions to Trusted Execution Environment (TEE) functionality, even without having GrapheneOS-specific hardware.
+
+For more details on the near-term roadmap, check out the GrapheneOS [issue trackers](https://grapheneos.org/contact#reporting-issues), where most of the open issues represent planned enhancements.
 
 ## Conclusion
 
