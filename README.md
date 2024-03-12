@@ -55,11 +55,52 @@ Follow the detailed steps to configure each aspect of GrapheneOS for optimal pri
 - **Privacy-focused Apps:** Pre-installed apps designed for privacy.
 - **Open Source:** Transparency and community-driven development.
 
+## Battery Life and Performance
+
+- **Battery Life:** GrapheneOS may have a slight impact on battery life due to its enhanced security features.
+- **Performance:** The device's performance should remain smooth and responsive, with minimal impact from GrapheneOS's security measures.
+
+## App Compatibility and Alternatives
+
+- **Google Play Store Apps:** Some apps may not work due to the absence of Google Play Services. Consider using alternative apps from F-Droid or the Aurora Store.
+- **MicroG:** A free and open-source alternative to Google Play Services that can improve app compatibility.
+
+## Privacy Settings
+
+- **App Permissions:** Review and manage app permissions to ensure they only have access to necessary data and features.
+- **Location Services:** Control which apps can access your location and when.
+- **Network Access:** Manage which apps can access the internet and local network.
+
+## Security Best Practices
+
+- **Strong Passwords:** Use strong, unique passwords for all accounts.
+- **Two-Factor Authentication:** Enable two-factor authentication whenever possible.
+- **App Downloads:** Be cautious when downloading apps from unknown sources.
+
+## Backup and Restore
+
+- **Seedvault:** GrapheneOS includes Seedvault, a secure and private backup solution.
+- **Limitations:** Some data, such as app data from non-compatible apps, may not be backed up.
+
+## Hardware Security Features
+
+- **Titan M Chip:** Google Pixel devices feature the Titan M security chip, which GrapheneOS leverages for enhanced security.
+
+## Firmware Updates
+
+- **Updating Firmware:** GrapheneOS provides firmware updates directly, ensuring timely security patches and improvements.
+- **Importance:** Keep your device's firmware up to date to maintain optimal security.
+
 ## Banking Applications Compatibility
 
 - **International Support:** Compatibility list for international banking apps.
 - **User Contributions:** Users can contribute reports through [GitHub](https://github.com/PrivSec-dev/banking-apps-compat-report/issues/342).
 - **Developer Encouragement:** GrapheneOS promotes support for the hardware attestation API.
+
+## Legal Considerations
+
+- **Warranty:** Installing GrapheneOS may void your device's warranty. Check your device's warranty terms and conditions.
+- **Jurisdiction:** Be aware of any legal implications of using GrapheneOS in your jurisdiction.
 
 ## Advanced Usage
 
@@ -70,7 +111,7 @@ Follow the detailed steps to configure each aspect of GrapheneOS for optimal pri
 ## Best Practices and Tips
 
 - **Regular Updates:** Keep OS and apps updated.
-- **Customization:** Customize within GrapheneOS’s privacy and security framework.
+- **Customization:** Customize within GrapheneOS's privacy and security framework.
 - **App Selection:** Choose apps that align with privacy and security goals.
 
 ## Troubleshooting and Support
