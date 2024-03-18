@@ -8,7 +8,6 @@ GrapheneOS is the only custom Android-based operating system you should buy a ne
 - Network and sensor permissions
 - Full firmware updates and signed builds, supporting verified boot
 - Optional Sandboxed Google Play, allowing you to use Google Play Services while controlling their permissions and access
-- Sandboxed Google Play, allowing you to use Google Play Services while controlling their permissions and access
 - Support for most Google Play Services features, including push notifications, In-app Billing API, Google Play Games, Play Asset Delivery, and FIDO2
 - Advanced Protection Program features, except for Play Protect and restricted app installation
 - Storage Scopes feature, allowing you to force apps that request broad storage access permission to function with scoped storage
@@ -26,24 +25,19 @@ Even prominent privacy experts like Edward Snowden, the well-known NSA whistlebl
 
 While GrapheneOS is our recommended choice for a privacy-focused and secure Android experience, it's worth comparing it to other popular Android ROMs to understand its unique advantages. The following table provides a detailed comparison of GrapheneOS with other ROMs such as DivestOS, CalyxOS, IodéOS, /e/, LineageOS, and stock Android:
 
+
 | Feature/Aspect | GrapheneOS | DivestOS | CalyxOS | IodéOS | /e/ | LineageOS | Stock Android |
-|---------------------------------|-------------------|-------------------|-------------------|-------------------|--------------------|--------------------|-------------------|
-| Based on | AOSP | LineageOS | AOSP | LineageOS | LineageOS | AOSP | AOSP |
+|----------------|------------|----------|---------|--------|-----|------------|---------------|
+| Based on | AOSP | AOSP fork | AOSP | AOSP fork | AOSP fork | AOSP | AOSP |
 | Free and open source (FOSS)? | Yes | Yes | Yes | Yes | Yes | Yes | No |
-| Deblobbed? | Yes, significantly| Yes, extensively | Yes, significantly| Yes, minimal | Yes, minimal | Yes, minimal | No |
-| Network controls for apps | Direct/indirect | Direct/indirect | Direct only | Direct only | Direct only | Direct only | No |
-| E2E-encrypted phone backups | Yes (Seedvault) | Yes (Seedvault) | Yes (Seedvault) | Yes (Seedvault) | Yes (Seedvault) | Yes (Seedvault) | Yes (Google login)|
-| Android Auto compatible | Yes | No | No | No | No | No | Yes |
-| Google Pay compatible | No | No | No | No | No | No | Yes |
-| Implementation | GmsCompat | microG | microG | microG | microG | None/manual MicroG| Google Play Services|
-| Sandboxed/unprivileged? | Yes | Yes | No | No | No | No | No |
+| Proprietary code removal | High | High | Medium | Low | Low | Low | No |
+| Sandboxed Google Play? | Optional | No | No | No | No | No | No |
 | Storage scopes | Yes | No | No | No | No | No | No |
-| Per-app sensor controls | Yes | Yes | No | No | No | No | No |
-| Verified boot | Yes | Yes (excl. system app updates)| Yes (excl. system app updates) | Yes (excl. system app updates) | w/ test keys; excl. system app updates | No | Yes (excl. system app updates) |
-| Hardened memory allocator? | Yes | Yes | No | No | No | No | No |
-| Hardened kernel? | Yes, highest | Yes, high | No | No | No | No | No |
-| Security update speed | <2 days | 1-3 weeks | ~1 week | ~1 month | ~2 months | 1-2 weeks | Depends on vendor |
-| Number of Android versions supported | Usually 1 | 7 (incl. backports) | Usually 1 | Usually 1 | 2-3 | Usually 3 | Usually 3 |
+| Verified boot | Yes | Partial | Partial | Partial | Partial | No | Partial |
+| Hardened allocator | Yes | Yes | No | No | No | No | No |
+| Hardened kernel | Yes | Yes | No | No | No | No | No |
+| Security update speed | Fastest | Fast | Moderate | Slow | Slow | Moderate | Varies by vendor |
+| Long-term support | 5 years | Several years | 1-3 years | Several years | Several years | Several years | No |
 
 *Note: The table above is a simplified version. To get the latest and detailed information, check out the [complete comparison table](https://eylenburg.github.io/android_comparison.htm) by [@eylenburg](https://github.com/eylenburg)*
 
@@ -67,35 +61,6 @@ Ultimately, the choice of ROM depends on your specific needs and priorities. How
 
 - **Compatibility Check:** Ensure your Pixel device is compatible at [GrapheneOS FAQ](https://grapheneos.org/faq).
 - **Backup Data:** Backup existing data before installation.
-- **Verification for Safety**: 
-
-Before installing GrapheneOS, it's crucial to verify the integrity of the factory image to ensure that it has not been altered or tampered with. Follow these steps for each new GrapheneOS release:
-
-1. **Download the Factory Image**: Navigate to the official GrapheneOS releases page at [GrapheneOS Releases](https://grapheneos.org/releases) and download the factory image for your specific device model.
-
-2. **Download Verification Files**: From the same page, download the corresponding signed checksums file (for example, `crosshatch-factory-2021.07.06.15.zip.sha256sum.minisig`) and the GrapheneOS releases sub-key (`release-signing-subkey.asc`).
-
-3. **Import the GrapheneOS Releases Sub-key**: Import the downloaded GrapheneOS releases sub-key into your GPG keyring to verify the signature of the checksums file. Open your command line tool and execute:
-   ```
-   gpg --import release-signing-subkey.asc
-   ```
-   
-4. **Verify the Signature of the Checksums File**: Use GPG to verify that the checksums file is correctly signed by the GrapheneOS release key. Replace the filename with the one corresponding to your downloaded release:
-   ```
-   gpg --verify [your-checksum-file].minisig
-   ```
-   If the signature is valid, GPG will output a message indicating a good signature from "GrapheneOS Releases <releases@grapheneos.org>".
-
-5. **Verify the Factory Image Integrity**: Confirm the factory image's integrity by comparing its SHA256 checksum with the one provided in the signed checksums file. Replace `[your-factory-image]` and `[your-checksum-file]` with the names of your downloaded files:
-   ```
-   sha256sum -c [your-checksum-file]
-   ```
-   If the checksum matches, the output should indicate that the file is OK.
-
-If both the signature and checksum verifications are successful, the GrapheneOS factory image is confirmed to be genuine and has not been tampered with. Proceed with confidence to the installation steps.
-
-Remember to perform these verification steps each time you download a new release of GrapheneOS to ensure the integrity and security of your operating system installation.
-
 - **Installation Methods:** Use the [Web Installer](https://grapheneos.org/install/web) for the easiest and most foolproof installation. The [CLI Installer](https://grapheneos.org/install/cli) is available for advanced users.
 
 ## Initial Setup
@@ -119,7 +84,14 @@ After installing GrapheneOS, follow these steps to set up your device:
 7. Set up a secure lock screen:
    - Go to Settings > Security > Screen lock.
    - Choose a strong PIN or password. Pattern unlock is not available in GrapheneOS due to security concerns.
-   - Lockdown mode is not a setting you enable permanently. It's a one-time action that disables biometrics and notifications on the lock screen until the next unlock.
+   - Note on Lockdown mode:
+
+     Lockdown mode is a feature that temporarily disables biometric unlocking, fingerprint unlocking, and notifications on the lock screen. This can be particularly useful in situations where you might be compelled to unlock your device against your will, such as during a border crossing or police encounter. When Lockdown mode is activated, your device can only be unlocked with your PIN, pattern, or password.
+
+     Enabling Lockdown mode is not necessary for all users and depends on your specific security needs and threat model. If you decide to enable Lockdown mode, go to Settings > Security > Lockdown and turn on the "Show lockdown option" toggle. You can then activate Lockdown mode by pressing and holding the power button and selecting "Lockdown" from the power menu.
+
+     Keep in mind that Lockdown mode is not a setting that you enable permanently, but rather a one-time action that you can use whenever you need an extra layer of security. If you choose to use Lockdown mode, familiarize yourself with activating it quickly in case you ever need to use it under pressure.
+
 
 8. Disable OEM unlocking:
    - Go to Settings > About phone > Tap "Build number" until developer mode is enabled.
@@ -133,7 +105,7 @@ After installing GrapheneOS, follow these steps to set up your device:
     - Go to Settings > System > Backup.
     - Choose a secure backup option, such as Seedvault or an encrypted cloud storage service.
 
-11. Install apps from trusted sources based on your individual needs. Avoid blanket recommendations for app stores.
+11. Install apps from trusted sources based on your individual needs. 
 
 12. Configure any additional security or privacy features according to your needs, such as app permissions, network controls, or sensor controls. Do NOT modify permissions for system apps.
 
@@ -145,7 +117,7 @@ When transitioning to GrapheneOS from another operating system, consider the fol
 
 - **Backup Your Data**: Ensure important data such as contacts, photos, and documents are backed up to a secure location.
 - **Transfer Securely**: Use encrypted methods or direct connections to transfer data to your new GrapheneOS device.
-- **Review Apps**: Due to GrapheneOS's enhanced security features, some apps from other platforms may not be compatible. Check the compatibility of your essential apps beforehand and explore secure alternatives if necessary.
+- **Review Apps**: GrapheneOS maintains excellent app compatibility, especially when using Sandboxed Google Play. Most apps should work without issues on GrapheneOS. However, if you rely on apps with advanced functionality or specific security requirements, it's always a good idea to check their compatibility beforehand. In the rare case that an app is incompatible, explore secure alternatives available through the Play Store or F-Droid.
 
 ## Battery Life and Performance
 
