@@ -88,10 +88,9 @@ After installing GrapheneOS, follow these steps to set up your device:
 
      Lockdown mode is a feature that temporarily disables biometric unlocking, fingerprint unlocking, and notifications on the lock screen. This can be particularly useful in situations where you might be compelled to unlock your device against your will, such as during a border crossing or police encounter. When Lockdown mode is activated, your device can only be unlocked with your PIN, pattern, or password.
 
-     Enabling Lockdown mode is not necessary for all users and depends on your specific security needs and threat model. If you decide to enable Lockdown mode, go to Settings > Security > Lockdown and turn on the "Show lockdown option" toggle. You can then activate Lockdown mode by pressing and holding the power button and selecting "Lockdown" from the power menu.
+     Enabling Lockdown mode is not necessary for all users and depends on your specific security needs and threat model. Lockdown mode is always available on GrapheneOS and does not require any additional setup. To activate Lockdown mode, simply press and hold the power button and then tap the "Lockdown" option that appears on the power menu.
 
      Keep in mind that Lockdown mode is not a setting that you enable permanently, but rather a one-time action that you can use whenever you need an extra layer of security. If you choose to use Lockdown mode, familiarize yourself with activating it quickly in case you ever need to use it under pressure.
-
 
 8. Disable OEM unlocking:
    - Go to Settings > About phone > Tap "Build number" until developer mode is enabled.
