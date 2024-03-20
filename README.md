@@ -20,30 +20,13 @@ Even prominent privacy experts like Edward Snowden, the well-known NSA whistlebl
 
 ![image](https://github.com/iAnonymous3000/awesome-grapheneos-guide/assets/32236127/78571e0b-9e81-451d-83ef-02269aa729fd)
 
-
 ## GrapheneOS vs. Other Android ROMs
 
-While GrapheneOS is our recommended choice for a privacy-focused and secure Android experience, it's worth comparing it to other popular Android ROMs to understand its unique advantages. The following table provides a detailed comparison of GrapheneOS with other ROMs such as DivestOS, CalyxOS, IodéOS, /e/, LineageOS, and stock Android:
+While GrapheneOS is our recommended choice for a privacy-focused and secure Android experience, it's worth comparing it to other popular Android ROMs to understand its unique advantages.
 
+As evident from the [comprehensive comparison table](https://eylenburg.github.io/android_comparison.htm) by [@eylenburg](https://github.com/eylenburg), GrapheneOS stands out in terms of its strong focus on privacy, security, and freedom. It is based on AOSP, is fully open-source, and has been extensively deblobbed. GrapheneOS also offers great features such as per-app network controls, storage and contact scopes, and advanced security hardening.
 
-| Feature/Aspect | GrapheneOS | DivestOS | CalyxOS | IodéOS | /e/ | LineageOS | Stock Android |
-|----------------|------------|----------|---------|--------|-----|------------|---------------|
-| Based on | AOSP | AOSP fork | AOSP | AOSP fork | AOSP fork | AOSP | AOSP |
-| Free and open source (FOSS)? | Yes | Yes | Yes | Yes | Yes | Yes | No |
-| Proprietary code removal | High | High | Medium | Low | Low | Low | No |
-| Sandboxed Google Play? | Optional | No | No | No | No | No | No |
-| Storage scopes | Yes | No | No | No | No | No | No |
-| Verified boot | Yes | Partial | Partial | Partial | Partial | No | Partial |
-| Hardened allocator | Yes | Yes | No | No | No | No | No |
-| Hardened kernel | Yes | Yes | No | No | No | No | No |
-| Security update speed | Fastest | Fast | Moderate | Slow | Slow | Moderate | Varies by vendor |
-| Long-term support | 5 years | Several years | 1-3 years | Several years | Several years | Several years | No |
-
-*Note: The table above is a simplified version. To get the latest and detailed information, check out the [complete comparison table](https://eylenburg.github.io/android_comparison.htm) by [@eylenburg](https://github.com/eylenburg)*
-
-As evident from the comparison, GrapheneOS stands out in terms of its strong focus on privacy, security, and freedom. It is based on AOSP, is fully open-source, and has been extensively deblobbed. GrapheneOS also offers unique features such as per-app network controls, storage and contact scopes, and advanced security hardening.
-
-While other ROMs like DivestOS and CalyxOS also prioritize privacy and security, they may not offer the same level of granular control and advanced security features as GrapheneOS. LineageOS and /e/ are more focused on providing an alternative to stock Android with additional customization options, but they may not be as hardened as GrapheneOS.
+While other ROMs like DivestOS and CalyxOS also prioritize privacy and security, they may not offer the same level of granular control and advanced security features as GrapheneOS. LineageOS and /e/ are more focused on providing an alternative to stock Android with additional customization options, but they are not as hardened as GrapheneOS.
 
 Ultimately, the choice of ROM depends on your specific needs and priorities. However, if your primary concern is privacy and security, GrapheneOS is the clear winner among the compared ROMs.
 
