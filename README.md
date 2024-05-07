@@ -138,7 +138,7 @@ It's important to note that profiles are always linked to a parent user, which i
 
 For more information on how to develop apps that work seamlessly with Work Profiles, refer to the [Android for Business documentation](https://developer.android.com/work).
 
-To learn more about the differences between User Profiles and Work Profiles in GrapheneOS, watch this [video guide](https://youtu.be/20C0FD7mGDY?si=TsprE4i3kJlc3iZP).
+To learn more about the differences between User Profiles and Work Profiles in GrapheneOS, watch this [video guide](https://youtu.be/20C0FD7mGDY).
 
 ### Troubleshooting App Compatibility
 
